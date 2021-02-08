@@ -1,6 +1,6 @@
 "use strict";
 
-const inputValue = document.querySelector("#input").value = `morten gross`;
+const inputValue = document.querySelector("#input").value = `morten bøttern gross`;
 const outputValue = document.querySelector("#output");
 
 window.addEventListener("DOMContentLoaded", start);
@@ -31,6 +31,9 @@ function buttonClick() {
 
     } else if (outputOption === "3") {
         console.log(outputOption);
+        const firstSpace = inputValue.indexOf(" ");
+        const lastSpace = inputValue.lastIndexOf(" ");
+        outputValue.value = inputValue.substring(firstSpace+1, lastSpace);
         
     } else if (outputOption === "4") {
         console.log(outputOption);
