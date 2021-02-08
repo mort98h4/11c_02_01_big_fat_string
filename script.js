@@ -19,8 +19,10 @@ function buttonClick() {
     if (outputOption === "0") {
         console.log(outputOption);
         outputValue.value = inputValue.substring(0,1).toUpperCase() + inputValue.substring(1);
+
     } else if (outputOption === "1") {
         console.log(outputOption);
+        outputValue.value = inputValue.substring(0, inputValue.indexOf(" "))
         
     } else if (outputOption === "2") {
         console.log(outputOption);
