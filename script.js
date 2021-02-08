@@ -40,20 +40,28 @@ function buttonClick() {
         let fileType = inputValue.substring(inputValue.lastIndexOf("."));
         outputValue.value = `The file type is ${fileType}`;
         
-    } else {
+    } else if (outputOption === "4" && input != inputValue.endsWith(`.jpg`) || input != inputValue.endsWith(`.png`)) {
         outputValue.value = `This file type is not supported.`
-    }
-    if (outputOption === "5") {
+        
+    } else if (outputOption === "5") {
         console.log(outputOption);
         const star = "*";
         outputValue.value = star.repeat(inputValue.length);
         
     } else if (outputOption === "6") {
         console.log(outputOption);
+        outputValue.value = inputValue.substring(0,2).toLowerCase() + inputValue.substring(2, 3).toUpperCase() + inputValue.substring(3).toLowerCase();
         
     } else if (outputOption === "7") {
         console.log(outputOption);
         
+        let words = inputValue.split(` `);
+        console.log(words);
+        words.forEach(word => {
+            console.log(word.substring(0,1).toUpperCase() + word.substring(1));
+            
+            outputValue.value = word[0].substring(0,1).toUpperCase() + word.substring(1);
+        });
     }
 
 }
