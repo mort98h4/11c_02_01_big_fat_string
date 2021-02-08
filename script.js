@@ -45,6 +45,8 @@ function buttonClick() {
     }
     if (outputOption === "5") {
         console.log(outputOption);
+        const star = "*";
+        outputValue.value = star.repeat(inputValue.length);
         
     } else if (outputOption === "6") {
         console.log(outputOption);
