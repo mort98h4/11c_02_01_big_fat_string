@@ -22,10 +22,12 @@ function buttonClick() {
 
     } else if (outputOption === "1") {
         console.log(outputOption);
-        outputValue.value = inputValue.substring(0, inputValue.indexOf(" "))
+        outputValue.value = inputValue.substring(0, inputValue.indexOf(" "));
         
     } else if (outputOption === "2") {
         console.log(outputOption);
+        const firstName = inputValue.substring(0, inputValue.indexOf(" "));
+        outputValue.value = firstName.length;
 
     } else if (outputOption === "3") {
         console.log(outputOption);
