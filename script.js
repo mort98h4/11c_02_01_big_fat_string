@@ -1,8 +1,5 @@
 "use strict";
 
-const inputValue = document.querySelector("#input").value = `morten bøttern gross`;
-const outputValue = document.querySelector("#output");
-
 window.addEventListener("DOMContentLoaded", start);
 
 function start() {
@@ -13,6 +10,9 @@ function start() {
 
 function buttonClick() {
     console.log("buttonClick");
+    const input = document.querySelector("#input");
+    const outputValue = document.querySelector("#output");
+    let inputValue = input.value;
 
     const outputOption = document.querySelector("#outputOptions").value;
 
@@ -35,10 +35,15 @@ function buttonClick() {
         const lastSpace = inputValue.lastIndexOf(" ");
         outputValue.value = inputValue.substring(firstSpace+1, lastSpace);
         
-    } else if (outputOption === "4") {
+    } else if (outputOption === "4" && inputValue.endsWith(`.jpg`) || inputValue.endsWith(`.png`)) {
         console.log(outputOption);
+        let fileType = inputValue.substring(inputValue.lastIndexOf("."));
+        outputValue.value = `The file type is ${fileType}`;
         
-    } else if (outputOption === "5") {
+    } else {
+        outputValue.value = `This file type is not supported.`
+    }
+    if (outputOption === "5") {
         console.log(outputOption);
         
     } else if (outputOption === "6") {
