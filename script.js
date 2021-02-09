@@ -40,7 +40,7 @@ function buttonClick() {
         let fileType = inputValue.substring(inputValue.lastIndexOf("."));
         outputValue.value = `The file type is ${fileType}`;
         
-    } else if (outputOption === "4" && input != inputValue.endsWith(`.jpg`) || input != inputValue.endsWith(`.png`)) {
+    } else if (outputOption === "4" && input != inputValue.endsWith(`.jpg`) ||outputOption === "4" && input != inputValue.endsWith(`.png`)) {
         outputValue.value = `This file type is not supported.`
         
     } else if (outputOption === "5") {
@@ -54,14 +54,10 @@ function buttonClick() {
         
     } else if (outputOption === "7") {
         console.log(outputOption);
+        console.log(inputValue.charAt() = " ");
+        // const lenInput = inputValue.length;
+        // console.log(lenInput);
         
-        let words = inputValue.split(` `);
-        console.log(words);
-        words.forEach(word => {
-            console.log(word.substring(0,1).toUpperCase() + word.substring(1));
-            
-            outputValue.value = word[0].substring(0,1).toUpperCase() + word.substring(1);
-        });
     }
 
 }
